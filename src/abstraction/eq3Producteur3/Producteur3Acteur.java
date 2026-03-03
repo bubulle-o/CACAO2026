@@ -16,7 +16,6 @@ public class Producteur3Acteur implements IActeur {
 	protected int cryptogramme;
 	
 	public Producteur3Acteur() {
-		this.journal = new Journal("JournalEQ3", this);
 	}
 	
 	public void initialiser() {
@@ -35,8 +34,6 @@ public class Producteur3Acteur implements IActeur {
 	////////////////////////////////////////////////////////
 
 	public void next() {
-		String num_etape = "Etape : " + Filiere.LA_FILIERE.getEtape();
-		this.journal.ajouter(num_etape);
 	}
 
 	public Color getColor() {// NE PAS MODIFIER
