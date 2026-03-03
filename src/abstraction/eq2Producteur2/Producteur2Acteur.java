@@ -13,6 +13,8 @@ import abstraction.eqXRomu.produits.IProduit;
 public class Producteur2Acteur implements IActeur {
 	
 	protected int cryptogramme;
+	protected Variable stockTotal;
+	private int numero = 0;
 	protected Journal journal = new Journal("Journal Eq2", this);
 	protected Journal JournalBanque;
 
@@ -38,8 +40,8 @@ public class Producteur2Acteur implements IActeur {
 	////////////////////////////////////////////////////////
 
 	public void next() {
-		int etape = Filiere.LA_FILIERE.getEtape();
-		journal.ajouter("Étape " + etape);
+		journal.ajouter("Numero : " + numero);
+		numero++;
 	}
 
 	public Color getColor() {// NE PAS MODIFIER
@@ -47,7 +49,7 @@ public class Producteur2Acteur implements IActeur {
 	}
 
 	public String getDescription() {
-		return "Bla bla bla";
+		return "Producteur de fèves de cacao simples (BQ, MQ, HQ).";
 	}
 
 	// Renvoie les indicateurs
