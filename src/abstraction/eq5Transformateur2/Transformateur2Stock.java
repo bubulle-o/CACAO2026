@@ -20,7 +20,7 @@ public class Transformateur2Stock extends Transformateur2Acteur{
     private HashMap<Feve, Double> stock_feve;
     private HashMap<Chocolat, Double> stock_chocolat;
     
-    // Constructeur
+    // Constructeur 
     public Transformateur2Stock(){
         this.stock_feve = new HashMap<Feve, Double>();
         this.stock_feve.put(Feve.F_BQ, 0.0);
