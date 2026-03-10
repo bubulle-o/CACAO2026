@@ -4,6 +4,7 @@ import java.util.HashMap;
 import abstraction.eqXRomu.produits.Feve;
 
 public class Producteur3Stock {
+    /** @author Guillaume Leroy */
     private HashMap<Feve, Double> stock;
     public Producteur3Stock(){
         this.stock = new HashMap<Feve, Double>();

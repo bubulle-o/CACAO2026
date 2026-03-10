@@ -16,12 +16,15 @@ import abstraction.eqXRomu.produits.IProduit;
 public class Producteur3Acteur implements IActeur {
 	private Journal journal_periode;
 	protected int cryptogramme;
-	protected Producteur3Stock stock;
+	protected Producteur3Stock stock; 
 	private Variable StockTotal;
 	
 
 	public Producteur3Acteur() {
-		this.journal_periode = new Journal("Journal des périodes", this);
+		/** @author Vassili Spiridonov */
+		this.journal_periode = new Journal("Journal des périodes", this); 
+
+		/** @author Guillaume Leroy */
 		this.stock = new Producteur3Stock();
 		this.stock.addStock(Feve.F_BQ , 250.0);
 		this.stock.addStock(Feve.F_MQ , 250.0);

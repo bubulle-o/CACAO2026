@@ -7,6 +7,7 @@ import abstraction.eqXRomu.produits.Gamme;
 public class Producteur3VendeurBourse extends Producteur3Acteur implements IVendeurBourse {
 
     public Producteur3VendeurBourse() {
+		/** @author Victor Vannier-Moreau */
 		super();
 		System.err.println("Ok");
 	}
