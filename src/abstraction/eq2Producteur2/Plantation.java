@@ -1,10 +1,10 @@
 package abstraction.eq2Producteur2;
 import java.util.concurrent.ThreadLocalRandom;
 import abstraction.eqXRomu.produits.Feve;
-//PAUL DELACOUR
+// @PAUL DELACOUR
 public class Plantation {
     private Feve typeFeve;          // Type de fèves cultivées
-    private int parcelles;          // Nombre de parcelles de 100 ha
+    private int parcelles;          // Nombre de parcelles de 1 ha
     private int age;                // Âge de la plantation en steps
     private final int dureeDeVie;   // Durée de vie maximale avant remplacement
     private final int tempsAvantProduction; // Temps nécessaire avant production
@@ -29,7 +29,7 @@ public class Plantation {
                 this.prix_achat = ;
                 this.prix_vente = ;
                 this.prix_replantation = ;
-                this.salaire_employe = ;
+                this.salaire_employe = 1800;
                 break;
  
             case F_MQ:
@@ -39,7 +39,7 @@ public class Plantation {
                 this.prix_achat = ;
                 this.prix_vente = ;
                 this.prix_replantation = ;
-                this.salaire_employe = ;
+                this.salaire_employe = 1800;
                 break;
 
             case F_HQ:
@@ -49,22 +49,83 @@ public class Plantation {
                 this.prix_achat = ;
                 this.prix_vente = ;
                 this.prix_replantation = ;
-                this.salaire_employe = ;
+                this.salaire_employe = 1800;
                 break;
 
             case F_HQ_E:
                 this.dureeDeVie = 960;
                 this.tempsAvantProduction = 72; // 5 ans
-                this.productionParParcelle = ;
+                this.productionParParcelle = 63 000 ;
                 this.prix_achat = ;
                 this.prix_vente = ;
                 this.prix_replantation = ;
-                this.salaire_employe = ;
+                this.salaire_employe = 1800;
                 break;
             
             default:
                 throw new IllegalArgumentException("Type de fève non reconnu !");
         }
+    }
+
+
+    /**
+     * Avance l'âge de la plantation d'un step et renvoie la quantité de fèves produites.
+     */
+    public double prodPlantation() {
+        if (age == 0) {
+            return 0; // Plantation récente, pas encore en production
+        }
+        else if (age < tempsAvantProduction) {
+            return 0; // La plantation n'est pas encore en production
+        }
+        if (age >= dureeDeVie) {
+            return 0; // Plantation morte, nécessite un remplacement
+        }
+
+        // Calcul de la production en fèves sèches
+        double fevesTotales = parcelles * productionParParcelle;
+
+        return fevesTotales;
+    }
+
+    public void add_age() {
+        age++;
+    }
+
+        public Feve getTypeFeve() {
+        return typeFeve;
+    }
+
+    public int getParcelles() {
+        return parcelles;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public boolean estEnProduction() {
+        return age >= tempsAvantProduction && age < dureeDeVie;
+    }
+
+    public boolean estMorte() {
+        return age >= dureeDeVie;
+    }
+
+    public void Replante() {
+        age = 0;
+        replante = true;
+    }
+
+    public boolean getReplante() {
+        return replante;
+    }
+
+    public double getprix_achat() {
+        return prix_achat;
+    }
+    public double getprix_replantation() {
+        return prix_replantation;
     }
 
 }
