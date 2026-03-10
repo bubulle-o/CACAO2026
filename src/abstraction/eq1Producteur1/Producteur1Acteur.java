@@ -12,6 +12,9 @@ import abstraction.eqXRomu.produits.Feve;
 import abstraction.eqXRomu.produits.IProduit;
 import abstraction.eqXRomu.encheres.MiseAuxEncheres;
 
+/** 
+ * @author Elise Dossal
+ */
 public class Producteur1Acteur implements IActeur {
 
 
@@ -21,7 +24,7 @@ public class Producteur1Acteur implements IActeur {
 
 	public Producteur1Acteur() {
 
-		//Créer un journal à chaque next  Elise Dossal
+		//Créer un journal à chaque next  
 		this.journal = new Journal("Journal "+this.getNom(), this);
 
 		//Ajoutez un indicateur du volume total de notre stock, en tonne Elise Dossal/Théophile Trillat
@@ -46,7 +49,7 @@ public class Producteur1Acteur implements IActeur {
 	public void next() {
 		this.journal.ajouter("Check");
 
-		Producteur1VendeurBourse vendeur = new Producteur1VendeurBourse(this)
+		Producteur1VendeurBourse vendeur = new Producteur1VendeurBourse(this) ;
 		Feve F_MQ = Feve.F_MQ ;
 		MiseAuxEncheres mise = new MiseAuxEncheres(vendeur, F_MQ, 120., true);
 

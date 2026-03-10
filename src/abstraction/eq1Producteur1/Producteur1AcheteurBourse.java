@@ -5,6 +5,10 @@ import java.util.List;
 import abstraction.eqXRomu.encheres.IAcheteurAuxEncheres;
 import abstraction.eqXRomu.encheres.MiseAuxEncheres;
 
+/** 
+ * @author Elise Dossal
+ */
+
 public class Producteur1AcheteurBourse implements IAcheteurAuxEncheres{
 
     // Elise Dossal

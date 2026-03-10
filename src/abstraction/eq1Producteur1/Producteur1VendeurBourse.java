@@ -5,6 +5,9 @@ import java.util.List;
 import abstraction.eqXRomu.encheres.IVendeurAuxEncheres;
 import abstraction.eqXRomu.encheres.MiseAuxEncheres;
 
+/** 
+ * @author Elise Dossal
+ */
 public class Producteur1VendeurBourse implements IVendeurAuxEncheres{
 
     // Elise Dossal
