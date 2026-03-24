@@ -29,7 +29,7 @@ public class Producteur1Acteur implements IActeur {
 		this.journal = new Journal("Journal "+this.getNom(), this);
 
 		//Ajoutez un indicateur du volume total de notre stock, en tonne Elise Dossal/Théophile Trillat
-		this.stockTot = new VariableReadOnly("stock de EQ1", "<html>Stock de EQ1</html>",this, 0.0, 10.0, 250.0);
+		this.stockTot = new VariableReadOnly("stock de EQ1", "<html>Stock de EQ1</html>",this, 0.0, 1000000000.0, 6000.0);
 	}
 	
 	public void initialiser() {
