@@ -65,7 +65,7 @@ public class Arbres_par_gamme {
     }
 
     /**
-     * Calcule la production de fèves selon les paliers d'âge
+     * Calcule la production de fèves selon les paliers d'âge.
      */
     public double getProductionFeve() { // On mesure la quantité de fève en tonne de fève (en considérant qu'une fève pèse 1g)
     /** @author Guillaume Leroy*/
