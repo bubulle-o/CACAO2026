@@ -30,6 +30,8 @@ public class Producteur1Stock extends Producteur1Acteur{
         for (double quantite : stock.values()){
             this.totalStock += quantite;
         }
+
+        this.stockTot.setValeur(this, totalStock);
     }
 
 	/////////////////////////////////////////////
@@ -122,4 +124,25 @@ public class Producteur1Stock extends Producteur1Acteur{
 
         return take_out;
     }
+
+    ///////////////////////////////////
+	//         Actions autres        //
+	///////////////////////////////////
+    
+    public void next() {
+        super.next();
+        // mettre à jour stockTot
+
+        this.stockTot.setValeur(this, totalStock);
+
+        // Permet de suivre le stock de fève
+		this.journal.ajouter( "Stock fève BQ :"+String.valueOf(this.stock.get(Feve.F_BQ)));
+        this.journal.ajouter( "Stock fève BQ_E :"+String.valueOf(this.stock.get(Feve.F_BQ_E)));
+        this.journal.ajouter( "Stock fève MQ :"+String.valueOf(this.stock.get(Feve.F_MQ)));
+        this.journal.ajouter( "Stock fève MQ_E :"+String.valueOf(this.stock.get(Feve.F_MQ_E)));
+        this.journal.ajouter( "Stock fève HQ :"+String.valueOf(this.stock.get(Feve.F_HQ)));
+        this.journal.ajouter( "Stock fève HQ_E :"+String.valueOf(this.stock.get(Feve.F_HQ_E)));
+
+    }
+
 }
