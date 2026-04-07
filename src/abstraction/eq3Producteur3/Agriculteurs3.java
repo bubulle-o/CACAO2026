@@ -26,7 +26,7 @@ public class Agriculteurs3 extends Producteur3Acteur {
     }
 
     public double getCoutMainOeuvreTotal() {
-        return (this.nbCDI * this.salaireCDI) + (this.nbCDI ) + (this.nbInterim * this.salaireInterim) + (this.nbInterim )
+        return (this.nbCDI * this.salaireCDI) + (this.nbInterim * this.salaireInterim) + (this.nbInterim ) +
                (this.nbEnfant * this.salaireEnfant);
     }
 
