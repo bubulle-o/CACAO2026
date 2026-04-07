@@ -34,4 +34,26 @@ public class Transformateur3VendeurAuxEncheres extends Transformateur3VendeurCCa
         super.next();
         this.journalEncheres.ajouter("Etape "+Filiere.LA_FILIERE.getEtape());
     }
+
+    public double prixMoyen(ChocolatDeMarque cm) {
+        if (prixRetenus.get(cm).size()>0) {
+            double somme = 0;
+            for (double d : prixRetenus.get(cm)) {
+                somme+=d;
+            }
+            return somme/prixRetenus.get(cm).size();
+        } else {
+            return 0;
+        }
+    }
+
+    public Enchere choisir(List<Enchere> enchere) {
+        return null;
+    }
+
+    public List<Journal> getJournaux() {
+        List<Journal> j = super.getJournaux();
+        j.add(this.journalEncheres);
+        return j;
+    }
 }
