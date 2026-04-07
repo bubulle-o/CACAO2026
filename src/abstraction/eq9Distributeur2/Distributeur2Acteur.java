@@ -153,7 +153,7 @@ public class Distributeur2Acteur implements IActeur, IDistributeurChocolatDeMarq
 	//               En lien avec la Banque               //
 	////////////////////////////////////////////////////////
     /**
-         * @author Paul Juhel
+         * @author Paul Juhel et Paul Rossignol
          */
 	// Appelee en debut de simulation pour communiquer cryptogramme personnel
 	public void setCryptogramme(Integer crypto) {

@@ -9,7 +9,7 @@ import abstraction.eqXRomu.produits.ChocolatDeMarque;
 import java.util.List;
 
     /**  
-	 * @author Anass Ouisrani
+	 * @author Paul ROSSIGNOL
      */
 public class Distributeur2AcheteurAO extends Distributeur2Acteur implements IAcheteurAO {
 
@@ -67,7 +67,7 @@ public class Distributeur2AcheteurAO extends Distributeur2Acteur implements IAch
     }
 
     /**
-     * Calcul du volume stratégique à acheter en AO selon prix moyen, tendance et capacité
+     * @author Paul ROSSIGNOL
      */
     protected double calculerQuantiteAchatVolume(ChocolatDeMarque choco, double stockActuel) {
         if (Filiere.LA_FILIERE == null || choco == null) {
@@ -134,7 +134,7 @@ public class Distributeur2AcheteurAO extends Distributeur2Acteur implements IAch
     }
 
     /**
-     * Évalue des conditions de l'offre (retard potentiel, minimum de quantité, etc.)
+     * @author Paul ROSSIGNOL
      */
     protected double evaluerConditionsOffre(OffreVente offre) {
         if (offre == null) {
