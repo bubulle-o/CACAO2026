@@ -10,7 +10,8 @@ import java.util.List;
 
     /**  
 	 * @author Paul ROSSIGNOL
-     */
+     * @author Anass OUISRANI 
+    */
 public class Distributeur2AcheteurAO extends Distributeur2Acteur implements IAcheteurAO {
 
     //  recherche 
@@ -67,6 +68,7 @@ public class Distributeur2AcheteurAO extends Distributeur2Acteur implements IAch
     }
 
     /**
+     * @author Anass OUISRANI 
      * @author Paul ROSSIGNOL
      */
     protected double calculerQuantiteAchatVolume(ChocolatDeMarque choco, double stockActuel) {
@@ -134,6 +136,7 @@ public class Distributeur2AcheteurAO extends Distributeur2Acteur implements IAch
     }
 
     /**
+     * @author Anass OUISRANI 
      * @author Paul ROSSIGNOL
      */
     protected double evaluerConditionsOffre(OffreVente offre) {
