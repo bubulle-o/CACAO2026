@@ -10,18 +10,18 @@ public class Agriculteurs3 extends Producteur3Acteur {
     private double salaireEnfant;   
     private boolean exploitationEnfant; 
 
-    public void Agriculteur3(int nbCDIInitial) {
-        this.nbCDI = nbCDIInitial;
+    public void Agriculteur3(Plantation3 plantation) {
+        this.nbCDI = 30 * plantation.getNbHectareTotal();
         this.nbInterim = 0;
         this.nbEnfant = 0; // Entrerpise éthique : aucun enfants exploités 
         this.salaireCDI = 12.0; // On les rémunères au max décidé dans les règles de fonctionnement (0.8€/jour)
-        this.salaireInterim = 20.0; // On paye plus chère les intérimaires
+        this.salaireInterim = 18.0; // On paye plus chère les intérimaires
         this.salaireEnfant = 3.0;  // D'après les règles de fonctionnemments : 0.2€/jour
         this.exploitationEnfant = false; // On vérifie le respect de la charte éthique 
     }
 
     public double getForceDeTravailTotale() {
-        return this.nbCDI + (this.nbEnfant * 0.6) + this.nbInterim; /* Les enfants comptent pour 0.6 d'un adulte.
+        return this.nbCDI + (this.nbEnfant * 0.5) + this.nbInterim; /* Les enfants comptent pour 0.5 d'un adulte.
      */
     }
 
@@ -44,6 +44,7 @@ public class Agriculteurs3 extends Producteur3Acteur {
     public void setNbInterim(int nb) {
         this.nbInterim = Math.max(0, nb);
     }
+
 
     
 
