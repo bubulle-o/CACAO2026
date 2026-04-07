@@ -135,9 +135,16 @@ public class Producteur3VendeurCC extends Producteur3VendeurBourse implements IV
         return aLivre;
     }
 
-    public double propositionPrix(ExemplaireContratCadre contrat) { 
-        return 2000.0; 
-    }
+    public double propositionPrix(ExemplaireContratCadre contrat) {
+    double coutTotalCacao = this.gestionCouts.getCoutTot(this);
+    double productionTotale = this.plantationeq3.getProductionTotale();
+    double coutParTonne = coutTotalCacao / productionTotale;
+
+    //Fixer le prix avec 35% de marge (Prix = Coût + 35% du Coût)
+    double prixVente = coutParTonne * 1.35;
+
+    return prixVente;
+}
 
     public double contrePropositionPrixVendeur(ExemplaireContratCadre contrat) {
         return contrat.getPrix(); 
